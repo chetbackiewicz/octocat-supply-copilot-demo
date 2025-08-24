@@ -53,6 +53,7 @@
 		}
 	},
 	"postCreateCommand": "npm install -g concurrently && npm run build",
+	"postAttachCommand": "gh cs ports visibility 3000:public -c \"$CODESPACE_NAME\"",
 	"hostRequirements": {
 		"cpus": 2,
 		"memory": "4gb"
