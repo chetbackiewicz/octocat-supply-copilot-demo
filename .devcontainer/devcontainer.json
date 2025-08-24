@@ -50,7 +50,7 @@
 			}
 		}
 	},
-	"postCreateCommand": "npm install -g concurrently && npm run build",
+	"postCreateCommand": "npm install -g concurrently && (npm ci || npm install) && npm run build",
 	// set the API port to public visibility
 	"postAttachCommand": "gh cs ports visibility 3000:public -c \"$CODESPACE_NAME\"",
 	"hostRequirements": {
