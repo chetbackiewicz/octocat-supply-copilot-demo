@@ -29,7 +29,8 @@
 				"ms-vscode.vscode-speech",
 				"Blodwynn.featurehighlight",
 				"bierner.markdown-mermaid",
-				"ms-azuretools.vscode-bicep"
+				"ms-azuretools.vscode-bicep",
+				"GitHub.vscode-pull-request-github"
 			],
 			"settings": {
 				"editor.inlineSuggest.experimentalInlineEditsEnabled": true,
@@ -49,9 +50,11 @@
 			}
 		}
 	},
-	"postCreateCommand": "npm install -g concurrently && npm install && npm run build",
+	"postCreateCommand": "npm install -g concurrently && npm run build",
+	// set the API port to public visibility
+	"postAttachCommand": "gh cs ports visibility 3000:public -c \"$CODESPACE_NAME\"",
 	"hostRequirements": {
-		"cpus": 2,
-		"memory": "4gb"
+		"cpus": 4,
+		"memory": "8gb"
 	}
 }
