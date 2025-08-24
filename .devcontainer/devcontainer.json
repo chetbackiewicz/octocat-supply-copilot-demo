@@ -3,6 +3,7 @@
 		"docker-compose.yml"
 	],
 	"service": "dev",
+	"workspaceFolder": "/workspaces/pure-octocat-supply-copilot-demo",
 	"forwardPorts": [
 		3000,
 		5137
@@ -52,10 +53,8 @@
 		}
 	},
 	"postCreateCommand": "npm install -g concurrently && npm run build",
-	// set the API port to public visibility
-	"postAttachCommand": "gh cs ports visibility 3000:public -c \"$CODESPACE_NAME\"",
 	"hostRequirements": {
-		"cpus": 4,
-		"memory": "8gb"
+		"cpus": 2,
+		"memory": "4gb"
 	}
 }
