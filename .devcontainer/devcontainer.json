@@ -33,6 +33,7 @@
 				"GitHub.vscode-pull-request-github"
 			],
 			"settings": {
+				"workbench.colorTheme": "Default Dark+",
 				"editor.inlineSuggest.experimentalInlineEditsEnabled": true,
 				"github.copilot.chat.advanced.inlineEdits.enabled": true,
 				"github.copilot.chat.agent.enabled": true,
