@@ -1,5 +1,5 @@
 ---
-applyTo: "octocat-supply-copilot-demo/api/src/routes/*.test.ts"
+applyTo: "**/*.test.ts"
 ---
 
 # Route tests — best practices
