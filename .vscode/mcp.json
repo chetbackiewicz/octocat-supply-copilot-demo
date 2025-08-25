@@ -11,5 +11,9 @@
             "type": "http",
             "url": "https://api.githubcopilot.com/mcp/",
         },
+        "fetch": {
+            "command": "docker",
+            "args": ["run", "-i", "--rm", "mcp/fetch"]
+        }
     }
 }
