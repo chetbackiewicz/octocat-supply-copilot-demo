@@ -3,25 +3,37 @@ mode: 'agent'
 description: 'Demo: Improve API Test Coverage - Add Unit Tests for Missing Routes.'
 tools: ['changes', 'codebase', 'editFiles', 'fetch', 'findTestFiles', 'githubRepo', 'problems', 'runCommands', 'runTasks', 'search', 'terminalLastCommand', 'testFailure', 'usages', 'playwright', 'github-remote']
 ---
-# 🧪 Demo: Add Unit Tests for Product and Supplier Routes
+
+## 📝 Before Running This Prompt
+
+**Customize the following placeholders with your target route:**
+
+1. Replace `[ROUTE_NAME]` with the route name (e.g., `product`)
+2. Replace `[ENTITY_NAME]` with the entity name in PascalCase (e.g., `Product`)
+3. Replace `[entity_name_lowercase]` with the entity name in lowercase (e.g., `product`)
+4. Replace `[entity_name_plural_lowercase]` with the plural entity name in lowercase (e.g., `products`)
+
+**Available routes to choose from:**
+- `branch`, `delivery`, `headquarters`, `order`, `orderDetail`, `orderDetailDelivery`, `product`, `supplier`
+
+# 🧪 Demo: Add Unit Tests for [ROUTE_NAME] Route
 
 ## 📊 Current State
 - Only **1 test file exists**: `branch.test.ts`
 
 ## 🎯 Objective
-Increase API test coverage by implementing comprehensive unit tests for Product and Supplier routes.
+Increase API test coverage by implementing comprehensive unit tests for the [ROUTE_NAME] route.
 
 ## 📋 Missing Test Files
 
 ### 🔗 Route Tests (High Priority)
-The following route files need complete test coverage:
+The following route file needs complete test coverage:
 
-- [ ] `src/routes/product.test.ts`
-- [ ] `src/routes/supplier.test.ts`
+- [ ] `src/routes/[ROUTE_NAME].test.ts`
 
 ## ✅ Test Coverage Requirements
 
-### For Each Route Test File:
+### For the Route Test File:
 - **CRUD Operations:**
   - ✅ GET all entities
   - ✅ GET single entity by ID
@@ -47,17 +59,17 @@ import express from 'express';
 
 ### Test Structure Template
 ```typescript
-describe('[Entity] API', () => {
+describe('[ENTITY_NAME] API', () => {
     beforeEach(() => {
         // Setup app and reset data
     });
 
-    it('should create a new [entity]', async () => { /* POST test */ });
-    it('should get all [entities]', async () => { /* GET all test */ });
-    it('should get a [entity] by ID', async () => { /* GET by ID test */ });
-    it('should update a [entity] by ID', async () => { /* PUT test */ });
-    it('should delete a [entity] by ID', async () => { /* DELETE test */ });
-    it('should return 404 for non-existing [entity]', async () => { /* Error test */ });
+    it('should create a new [entity_name_lowercase]', async () => { /* POST test */ });
+    it('should get all [entity_name_plural_lowercase]', async () => { /* GET all test */ });
+    it('should get a [entity_name_lowercase] by ID', async () => { /* GET by ID test */ });
+    it('should update a [entity_name_lowercase] by ID', async () => { /* PUT test */ });
+    it('should delete a [entity_name_lowercase] by ID', async () => { /* DELETE test */ });
+    it('should return 404 for non-existing [entity_name_lowercase]', async () => { /* Error test */ });
 });
 ```
 
@@ -71,18 +83,18 @@ npm run test:api
 npm run test:api -- -- --coverage
 
 # Run specific test file
-npm run test:api -- src/routes/product.test.ts
+npm run test:api -- src/routes/[ROUTE_NAME].test.ts
 ```
 
 ## 📈 Success Criteria
-- [ ] Add route test files for Product and Supplier
+- [ ] Add route test file for [ROUTE_NAME]
 - [ ] All tests passing in CI/CD
 
 ## 🚀 Getting Started
-1. Start with `product.test.ts` - copy `branch.test.ts` pattern
+1. Start with `[ROUTE_NAME].test.ts` - copy `branch.test.ts` pattern
 2. Implement basic CRUD tests first
 3. Add error scenarios incrementally
-4. Run coverage after each file to track progress
+4. Run coverage after implementation to track progress
 5. Follow ERD relationships for cross-entity testing
 
 ## 📚 Related Files
